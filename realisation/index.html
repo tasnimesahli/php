@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des Notes Étudiant</title>
+</head>
+<body>
+
+    <h1>Saisie des notes de l'étudiant</h1>
+
+    <form action="traitement.php" method="POST">
+        
+        <fieldset>
+            <legend>Informations de l'étudiant</legend>
+            <label>Nom :</label>
+            <input type="text" name="nom" required><br>
+
+            <label>Prénom :</label>
+            <input type="text" name="prenom" required><br>
+
+            <label>Date de naissance :</label>
+            <input type="date" name="date_naissance" required><br>
+
+            <label>Filière :</label>
+            <select name="filiere">
+                <option value="Informatique">Informatique</option>
+                <option value="Gestion">Gestion</option>
+                <option value="Design">Design</option>
+            </select>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Notes par matière</legend>
+            
+            <p><strong>Frontend :</strong> 
+                <input type="number" name="notes[Frontend][]" step="0.5" min="0" max="20" placeholder="Note 1" required>
+                <input type="number" name="notes[Frontend][]" step="0.5" min="0" max="20" placeholder="Note 2" required>
+            </p>
+
+            <p><strong>Backend :</strong> 
+                <input type="number" name="notes[Backend][]" step="0.5" min="0" max="20" placeholder="Note 1" required>
+                <input type="number" name="notes[Backend][]" step="0.5" min="0" max="20" placeholder="Note 2" required>
+            </p>
+
+            <p><strong>Entreprenariat :</strong> 
+                <input type="number" name="notes[Entreprenariat][]"  min="0" max="20" placeholder="Note 1" required>
+                <input type="number" name="notes[Entreprenariat][]" min="0" max="20" placeholder="Note 2" required>
+            </p>
+
+            <p><strong>Anglais :</strong> 
+                <input type="number" name="notes[Anglais][]" min="0" max="20" placeholder="Note 1" required>
+                <input type="number" name="notes[Anglais][]" min="0" max="20" placeholder="Note 2" required>
+            </p>
+
+            <p><strong>Soft Skills :</strong> 
+                <input type="number" name="notes[SoftSkills][]" min="0" max="20" placeholder="Note 1" required>
+                <input type="number" name="notes[SoftSkills][]"  min="0" max="20" placeholder="Note 2" required>
+            </p>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Générer le bulletin</button>
+        <button type="reset">Réinitialiser</button>
+
+    </form>
+
+</body>
+</html>
